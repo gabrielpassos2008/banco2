@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>Pesquisar Cliente</h1>
+
+    </header>
+    <main>
+        <form action="/pesquisar" method="post">
+            <label>Nome:</label>
+            <input type="text" name="nome">
+            <input type="submit" name="btpesquisar" value="pesquisar"> 
+        </form>
+
+        <section>
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+                {%for nome, email in clientes %}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{email}}</td>
+                </tr>                
+                {% endfor %}
+                </table>
+        </section>
+    </main>
+    <footer>
+        CRUD cliende 2025
+    </footer>
+
+</body>
+</html>
